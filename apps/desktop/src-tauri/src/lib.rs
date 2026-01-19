@@ -9,7 +9,7 @@ fn greet(name: &str) -> String {
 // Function to capture the screen
 #[tauri::command]
 async fn capture_screen() -> Result<String, String> {
-    // Grap all the screens/monitors
+    // Grab all the screens/monitors
     let monitors = Monitor::all().map_err(|e| e.to_string())?;
     // We want to capture the screen of main display in case of multiple monitors
     if let Some(monitor) = monitors.first(){
@@ -23,7 +23,7 @@ async fn capture_screen() -> Result<String, String> {
     // ).ok_or("Failed to convert buffer to image")?;
 
     // save the image to a file
-    let timestamp = chrono::Utc::now().to_string();
+    let timestamp = chrono::Utc::now().format("%Y%m%d_%H%M%S");
     let filename = format!("screenshot_{}.png", timestamp);
     // using reference to the filename so that we can use the variable later
     buffer.save(&filename).map_err(|e: image::ImageError| e.to_string())?;

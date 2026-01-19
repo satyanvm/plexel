@@ -3,8 +3,12 @@ import "./App.css";
 
 function App() {
   async function captureScreen() {
-    const filename = await invoke("capture_screen");
-    console.log(filename);
+    try {
+      const filename = await invoke("capture_screen");
+      console.log(filename);
+    } catch (error) {
+      console.error("Error capturing screen:", error);
+    }
   }
   return (
     <div>
