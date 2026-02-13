@@ -26,3 +26,8 @@ xcap = "0.3"         # The screen capture engine
 image = "0.25"       # To process pixels
 chrono = "0.4"       # To generate timestamps
 anyhow = "1.0"       # Easy error handling
+# leptess is the rust abstraction library for Tesseract OCR engine and Leptonica image processing library
+leptess = "0.4"      # For OCR text extraction
+sha2 = "0.10"        # For hashing OCR text
+hex = "0.4"          # For hex encoding of hashes   
+dirs = "6.0.0"
